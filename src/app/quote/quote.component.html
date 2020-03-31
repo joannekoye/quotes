@@ -10,11 +10,16 @@
           <li>
             {{ quote.quote }}
           </li><br>
-          <p>Total upvotes: {{ quote.upvotes }} </p>
-          <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
-
-          <p>Total downvotes: {{ quote.downvotes }} </p>
-          <button (click) = 'downvote(i)' class="btn"><img src="https://i.imgur.com/eqLD2.png" width="30" height="30"></button>
+          <div class="row">
+            <div class="col-md-4">
+              <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
+              <p>Total upvotes: {{ quote.upvotes }} </p>
+            </div>
+            <div class="col-md-4">
+              <button (click) = 'downvote(i)' class="btn"><img src="https://i.imgur.com/eqLD2.png" width="30" height="30"></button>
+              <p>Total downvotes: {{ quote.downvotes }} </p>
+            </div>
+          </div>
           <br>
           <button (click) = 'toggleDetails(i)' class="btn btn-outline-primary">Toggle Details</button>
           <app-quote-detail *ngIf= 'quote.showDescription' [quote] = 'quote'(isComplete)='deleteQuote($event,i)'></app-quote-detail>
