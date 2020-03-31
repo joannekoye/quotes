@@ -1,1 +1,19 @@
-<p>quote works!</p>
+
+<div class="container">
+  <h1><em>Quotes...</em></h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Example:</p>
+      <div *ngFor='let quote of quotes; let i = index'>
+        <div>
+          <li>
+            {{ quote.quote}}
+          </li><br>
+          <button (click) = 'toggleDetails(i)' class="btn btn-outline-primary">Toggle Details</button>
+          <app-
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

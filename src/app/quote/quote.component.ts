@@ -12,14 +12,10 @@ export class QuoteComponent implements OnInit {
     new Quote ('I got Flowers today', 'Ms. DSF', 'Joan Nekoye')
   ]
 
-  showDetails(index){
-    this.quotes[index].showDescription = true
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription
   }
-
-  hideDetails(index){
-    this.quotes[index].showDescription = false
-  }
-
+  
   addNewQuote(quote){
     let quoteLength = this.quotes.length;
     quote.id = quoteLength+1
