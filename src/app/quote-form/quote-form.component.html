@@ -1,1 +1,36 @@
-<p>quote-form works!</p>
+<div class="container-fluid">
+  <h2 class="text-center">Add a new Quote</h2>
+  <hr>
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+    
+    <div class="form-group">
+      <label for="quote">Enter Quote:</label>
+      <input type="text" id="quote" class="form-control" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
+      <div [hidden] = "quote.vallid || quote. pristine" class="alert alert-danger">
+        <p> Quote is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for= "author">Qoute written/coinned by: </label>
+      <input type="text" id="author" class="form-control" [(ngModel)]="newQuote.author" name="author" #author='ngModel'required>
+      <div [hidden] = "author.valid || author.pristine" class="alert alert-danger">
+        <p>Author is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="submitPerson">Quote submitted by: </label>
+      <input type="text" id="submitPerson" class="form-control" [(ngModel)]="newQuote.submitPerson" name="submitPerson" #submitPerson='ngModel' required>
+      <div [hidden] = "submitPerson.valid || submitPerson.pristine" class="alert alert-danger">
+        <p>Person's name is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="date">Entry Date: </label>
+      <input type="date" id="date" class="form-control" [(ngModel)]="newQuote.date" name="date" #date='ngModel' required>
+      <div [hidden] = "date.valid || date.pristine " class="alert alert-danger">
+        <p>Date is required</p>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Add Quote</button>
+  </form>
+</div>
