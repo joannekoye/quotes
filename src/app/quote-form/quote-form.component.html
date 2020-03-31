@@ -6,7 +6,7 @@
     <div class="form-group">
       <label for="quote">Enter Quote:</label>
       <input type="text" id="quote" class="form-control" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
-      <div [hidden] = "quote.vallid || quote. pristine" class="alert alert-danger">
+      <div [hidden] = "quote.valid || quote. pristine" class="alert alert-danger">
         <p> Quote is required</p>
       </div>
     </div>

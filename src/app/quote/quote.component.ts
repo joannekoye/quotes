@@ -9,7 +9,7 @@ import { Quote } from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote ('I got Flowers today', 'Ms. DSF', 'Joan Nekoye', new Date(2020,11,5))
+    new Quote ('I got Flowers today', 'Ms. DSF', 'Joan Nekoye',0,0, new Date(2020,11,5))
   ]
 
   toggleDetails(index){
@@ -21,6 +21,12 @@ export class QuoteComponent implements OnInit {
     quote.id = quoteLength+1
     quote.date = new Date (quote.date)
     this.quotes.push(quote)
+  }
+  upvote(index){
+    this.quotes[index].upvotes++
+  }
+  downvote(index){
+    this.quotes[index].downvotes++
   }
 
   deleteQuote(isComplete,index){

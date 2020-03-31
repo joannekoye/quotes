@@ -8,12 +8,22 @@
       <div *ngFor='let quote of quotes; let i = index'>
         <div>
           <li>
-            {{ quote.quote}}
+            {{ quote.quote }}
           </li><br>
+          <p>Total upvotes: {{ quote.upvotes }} </p>
+          <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
+
+          <p>Total downvotes: {{ quote.downvotes }} </p>
+          <button (click) = 'downvote(i)' class="btn"><img src="https://i.imgur.com/eqLD2.png" width="30" height="30"></button>
+          <br>
           <button (click) = 'toggleDetails(i)' class="btn btn-outline-primary">Toggle Details</button>
-          <app-quote-detail *ngIf= 'quote.showDescription' [quote] = 'quote'(isComplete)='deleteQuote($event,i)'></app-quote-detail>'
+          <app-quote-detail *ngIf= 'quote.showDescription' [quote] = 'quote'(isComplete)='deleteQuote($event,i)'></app-quote-detail>
         </div>
+        <hr>
       </div>
+    </div>
+    <div class="col-md-6">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
   </div>
 </div>
