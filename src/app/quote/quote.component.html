@@ -8,36 +8,54 @@
     <br><br><br><br><br>
   </div>
   <br>
-  <div class="row">
-    <div class="col-md-6">
+  <div class="formButton">
+    <button class="btn btn-outline-success"> <a href="#form">Add new quote</a> </button>
+  </div>
+    <div class="quotesDisplay">
       <div *ngFor='let quote of quotes; let i = index'>
         <div>
-          <li appHighlight  *ngIf="highlighter()=== quote.upvotes && quote.upvotes>0">
-            {{ quote.quote }}
-          </li><br>
-          <li  *ngIf="highlighter()!==quote.upvotes || quote.upvotes===0">
-            {{ quote.quote }}
-          </li><br>
+          <p class="quote" appHighlight  *ngIf="highlighter()=== quote.upvotes && quote.upvotes>0">
+            
+            "{{ quote.quote }}"
+            <br>
+          </p><br>
+          <p class="quote" *ngIf="highlighter()!==quote.upvotes || quote.upvotes===0">
+            <br>
+            "{{ quote.quote }}"
+            <br>
+          </p><br>
           <div class="row">
             <div class="col-md-4">
-              <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
-              <p>Total upvotes: {{ quote.upvotes }} </p>
+
             </div>
             <div class="col-md-4">
-              <button (click) = 'downvote(i)' class="btn"><img src="https://i.imgur.com/eqLD2.png" width="30" height="30"></button>
-              <p>Total downvotes: {{ quote.downvotes }} </p>
+              <div class="row">
+                <div class="col-md-6" id="details">
+                  <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
+                  <p>Total upvotes: {{ quote.upvotes }} </p>
+                </div>
+                <div class="col-md-6">
+                  <button (click) = 'downvote(i)' class="btn"><img src="https://i.imgur.com/eqLD2.png" width="30" height="30"></button>
+                  <p>Total downvotes: {{ quote.downvotes }} </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+
             </div>
           </div>
           <br>
-          <button (click) = 'toggleDetails(i)' class="btn btn-outline-primary">Toggle Details</button>
-          <app-quote-detail *ngIf= 'quote.showDescription' [quote] = 'quote'(isComplete)='deleteQuote($event,i)'></app-quote-detail>
+          <button (click) = 'toggleDetails(i)' class="btn btn-outline-primary"><a class="details" href="#details">Toggle Details</a></button>
+          <app-quote-detail  *ngIf= 'quote.showDescription' [quote] = 'quote'(isComplete)='deleteQuote($event,i)'></app-quote-detail>
         </div>
         <hr>
       </div>
       
     </div>
-    <div class="col-md-6">
+    <div class="form" id="form" >
+      <br>
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      <br><br><br>
     </div>
-  </div>
+  
 </div>

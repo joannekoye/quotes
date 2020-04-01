@@ -1,5 +1,5 @@
 .title {
-  background-image: url(https://static.wixstatic.com/media/5ad191_16907ecd3e0643669dba71b8045a14a7~mv2.jpg);
+  background-image: url(https://live.staticflickr.com/1652/25208831033_280c7936ba_b.jpg);
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,7 +7,49 @@
   font-family: 'Cardo', serif;
   
 }
+.quote{
+  font-family: 'Cardo', serif;
+  font-size: xx-large;
+}
+.form{
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5a80e6a8ccc5c5e243a5e6b9/1524436219774-GI4Z2HV8OGOIB88QA220/ke17ZwdGBToddI8pDm48kAkYvw_UKxu0_spP3XWSAZoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcLFVmPdr_2uTTCdw2MXICp2-wWWboE27I8HmE7IDUjB5AVdsGlbDUpcl6odlj8v8q/quill.jpg?format=1500w);
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Cardo', serif;
+  background-position: bottom;
+  font-size: 150%;
+  
+}
 
 .container-fluid{
   font-family: 'Open Sans', sans-serif;
 }
+.form{
+  padding-right: 20%;
+  padding-left: 20%;
+}
+.quotesDisplay{
+
+  text-align: center;
+
+}
+a{
+  color: green;
+  
+}
+a:hover{
+  color: white;
+  
+}
+.formButton{
+  align-items: center;
+  text-align: center;
+}
+a.details{
+  color: blue;
+}
+.details:hover{
+  color: white;
+}
+
