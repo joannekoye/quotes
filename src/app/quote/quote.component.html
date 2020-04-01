@@ -10,7 +10,7 @@
             {{ quote.quote }}
           </li><br>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4"appHighlight>
               <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
               <p>Total upvotes: {{ quote.upvotes }} </p>
             </div>
@@ -25,6 +25,7 @@
         </div>
         <hr>
       </div>
+      
     </div>
     <div class="col-md-6">
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
