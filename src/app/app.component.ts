@@ -8,6 +8,6 @@ import { Quote } from './quote'
 })
 export class AppComponent {
   quotes: Quote[] = [
-    new Quote ('I got Flowers today', 'Ms. DSF', 'Joan Nekoye',0, 0, new Date (2020,11,5))
+    new Quote ('I got Flowers today', 'Ms. DSF', 'Joan Nekoye',0, 0, new Date (2020,1,5))
   ]
 }
