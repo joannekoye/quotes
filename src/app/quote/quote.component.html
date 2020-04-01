@@ -1,18 +1,25 @@
 <link href="quote.component.css" rel="stylesheet">
-<div class="container">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+<div class="container-fluid">
   <div class="title">
-    <h1><em>Quotes...</em></h1>
+    <br><br><br><br><br>
+    <h1><em>Quotes</em></h1>
+    <br><br><br><br><br>
   </div>
   <br>
   <div class="row">
     <div class="col-md-6">
       <div *ngFor='let quote of quotes; let i = index'>
         <div>
-          <li appHighlight>
+          <li appHighlight  *ngIf="highlighter()=== quote.upvotes && quote.upvotes>0">
+            {{ quote.quote }}
+          </li><br>
+          <li  *ngIf="highlighter()!==quote.upvotes || quote.upvotes===0">
             {{ quote.quote }}
           </li><br>
           <div class="row">
-            <div class="col-md-4"appHighlight>
+            <div class="col-md-4">
               <button (click) = 'upvote(i)' class="btn"><img src="https://i.redd.it/06fvinjqymy21.png" width="30" height="30"></button>
               <p>Total upvotes: {{ quote.upvotes }} </p>
             </div>

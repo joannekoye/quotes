@@ -6,14 +6,10 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class HighlightDirective {
 
-  constructor(private elem:ElementRef) {}
-
-  @HostListener("click") onClicks(index){
-   
-
+  constructor(private elem:ElementRef){
+    this.elem.nativeElement.style.backgroundColor= 'lightcoral';
   }
-  private textDeco(action: string){
-  this.elem.nativeElement.style.backgroundColor= action;
-  }
+  
+  
  
 }

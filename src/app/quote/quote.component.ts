@@ -40,6 +40,20 @@ export class QuoteComponent implements OnInit {
   
   
   }
+  initialNumber:number
+  lastNumber:number
+  counter:number
+
+  highlighter(){
+    this.initialNumber = 0
+    this.lastNumber = 0
+
+    for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
+      this.lastNumber = this.quotes[this.counter].upvotes;
+      if(this.lastNumber > this.initialNumber){this.initialNumber = this.lastNumber}
+    }
+    return  this.initialNumber
+  }
 
   constructor() { }
 
